@@ -1,0 +1,31 @@
+/* ChatBox.css */
+
+/* Message container */
+.message-container {
+    max-width: 60%;
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    word-wrap: break-word;
+}
+
+/* Current user messages */
+.current-user {
+    background-color: #007bff; /* Bootstrap primary blue */
+    align-self: flex-end;
+}
+
+/* Other user messages */
+.other-user {
+    background-color: #6c757d; /* Bootstrap secondary gray */
+    align-self: flex-start;
+}
+
+/* Timestamp styling */
+.timestamp {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-top: 2px;
+    text-align: right;
+    display: block;
+}
