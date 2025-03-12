@@ -1,12 +1,7 @@
 package com.telco.telecom.service;
 
 import java.util.List;
-import java.util.Optional;
-
-import javax.swing.text.html.Option;
-
 import org.springframework.stereotype.Service;
-
 import com.telco.telecom.entity.Message;
 import com.telco.telecom.entity.User;
 import com.telco.telecom.repository.MessageRepository;
