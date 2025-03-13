@@ -4,9 +4,6 @@ FROM maven:3.9.6-eclipse-temurin-17 AS build
 # Set working directory
 WORKDIR /app
 
-# Copy only the pom.xml first to leverage Docker cache
-COPY pom.xml .
-
 # Download dependencies without building
 RUN mvn dependency:go-offline
 
