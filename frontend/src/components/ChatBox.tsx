@@ -7,17 +7,21 @@ import notificationSound from "../assets/longnotif.mp3";
 
 const ChatBox = () => {
 
+    type User = {
+        id: string;
+        username: string;
+    };
+    
     type Message = {
         id: string;
-        sender: string;
+        sender: User;
         content: string;
         timestamp: string;
-      };
-
+    };
 
     const [messages, setMessages] = useState<Message[]>([]);
     const [newMessage, setNewMessage] = useState("");
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState<User[] | null>(null);
     const [lastSentByUser, setLastSentByUser] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement | null>(null);
     const audioRef = useRef(new Audio(notificationSound));
@@ -82,7 +86,7 @@ const ChatBox = () => {
         }
     };
     // Press Enter Key to send a message
-    const handleEnter = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter"){
             e.preventDefault();
             sendMessage();
