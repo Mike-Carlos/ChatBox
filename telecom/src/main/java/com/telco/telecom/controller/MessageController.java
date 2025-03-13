@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "http://192.168.40.118:3000")
 @RestController
 @RequestMapping("/messages")
 public class MessageController {

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/auth";
+const API_URL = "http://192.168.40.118:5000/auth";
 
 
 export interface LoginData{

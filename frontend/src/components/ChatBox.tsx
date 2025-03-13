@@ -41,7 +41,7 @@ const ChatBox = () => {
      useEffect(() => {
         const fetchMessages = async () => {
             try {
-                const response = await axios.get("http://localhost:8080/messages", {
+                const response = await axios.get("http://192.168.40.118:5000/messages", {
                     headers: authService.getAuthHeaders(),
                 });
 
@@ -60,7 +60,7 @@ const ChatBox = () => {
         };
 
         fetchMessages();
-        const interval = setInterval(fetchMessages, 1000);
+        const interval = setInterval(fetchMessages, 2000);
         return () => clearInterval(interval);
     }, [messages, user]);
 
@@ -77,7 +77,7 @@ const ChatBox = () => {
         if (newMessage.trim() === "" || !user) return;
         try {
             setLastSentByUser(true); // Ensure scrolling will happen after messages update
-            await axios.post("http://localhost:8080/messages", { content: newMessage }, {
+            await axios.post("http://192.168.40.118:5000/messages", { content: newMessage }, {
                 headers: authService.getAuthHeaders(),
             });
             setNewMessage("");
