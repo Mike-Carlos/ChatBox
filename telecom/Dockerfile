@@ -2,7 +2,7 @@
 FROM maven:3.9.6-eclipse-temurin-17 AS build
 
 # Set working directory
-WORKDIR /app
+WORKDIR /telecom
 
 # Download dependencies without building
 RUN mvn dependency:go-offline
@@ -17,10 +17,10 @@ RUN mvn clean package -DskipTests
 FROM openjdk:17-jdk-slim
 
 # Set working directory
-WORKDIR /app
+WORKDIR /telecom
 
 # Copy the built JAR from the first stage
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=build /telecom/target/*.jar app.jar
 
 # Expose port 8080
 EXPOSE 8080
