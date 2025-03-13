@@ -21,7 +21,7 @@ const ChatBox = () => {
 
     const [messages, setMessages] = useState<Message[]>([]);
     const [newMessage, setNewMessage] = useState("");
-    const [user, setUser] = useState<User[] | null>(null);
+    const [user, setUser] = useState<User | null>(null);
     const [lastSentByUser, setLastSentByUser] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement | null>(null);
     const audioRef = useRef(new Audio(notificationSound));

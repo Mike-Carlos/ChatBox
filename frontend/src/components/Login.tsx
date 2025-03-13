@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import authService, { getAuthToken } from "../services/authService";
+import authService from "../services/authService";
 
 
 const Login: React.FC = () => {
