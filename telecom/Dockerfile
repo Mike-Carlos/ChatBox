@@ -4,7 +4,13 @@ FROM maven:3.9.6-eclipse-temurin-17 AS build
 # Set working directory
 WORKDIR /app
 
-# Copy the source code
+# Copy only the pom.xml first to leverage Docker cache
+COPY pom.xml .
+
+# Download dependencies without building
+RUN mvn dependency:go-offline
+
+# Copy the rest of the project
 COPY . .
 
 # Build the Spring Boot JAR
