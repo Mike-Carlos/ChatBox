@@ -45,8 +45,6 @@ export const register = async (data: RegisterData) => {
 export const getAuthHeaders = () => {
     const token = localStorage.getItem("token");
 
-    console.log("Retrieved Token:", token); // Check token format
-
     return token ? { Authorization: `Bearer ${token}` } : {};
 };
 

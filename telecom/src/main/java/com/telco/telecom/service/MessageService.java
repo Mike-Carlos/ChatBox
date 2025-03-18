@@ -20,8 +20,8 @@ public class MessageService {
         return messageRepository.findByOrderByTimestampAsc();
     }
 
-    public Message saveMessage(User sender, String content) {
-        return messageRepository.save(new Message(sender, content));
+    public Message saveMessage(User sender, String content, byte[] imageData) {
+        return messageRepository.save(new Message(sender, content, imageData));
     }
     
 
